@@ -1,4 +1,4 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
+// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
 #include "GrayChanCountDownPrivatePCH.h"
 
@@ -82,12 +82,6 @@ TSharedRef<SDockTab> FGrayChanCountDownModule::OnSpawnPluginTab(const FSpawnTabA
 		FText::FromString(FString::FromInt(Minutes))
 		); //表示文字列を設定
 
-	//パッケージビルドNGの警告文
-	FText WarningText = FText::FromString(
-		TEXT("このプラグインが有効な場合、必ずパッケージビルドに失敗します。\n" 
-			"必ずパッケージビルド時には無効にしてください。\n"
-			"UE4.11公開時に再度プラグインをテンプレートから作りなおせば解消されるかもしれません。"));
-
 	return SNew(SDockTab)
 		.TabRole(ETabRole::NomadTab)
 		[
@@ -106,18 +100,6 @@ TSharedRef<SDockTab> FGrayChanCountDownModule::OnSpawnPluginTab(const FSpawnTabA
 					.Text(WidgetText)
 				]
 			]//カウントダウン
-			+ SOverlay::Slot()
-			.VAlign(VAlign_Bottom)
-			.HAlign(HAlign_Center)
-			[
-				SNew(SBox)
-				.HAlign(HAlign_Center)
-				.VAlign(VAlign_Center)
-				[
-					SNew(STextBlock)
-					.Text(WarningText)
-				]
-			]//警告文
 		];//タブのUI定義
 }
 

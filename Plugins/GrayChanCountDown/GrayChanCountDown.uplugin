@@ -3,7 +3,7 @@
 	"Version": 1,
 	"VersionName": "1.0",
 	"FriendlyName": "GrayChanCountDown",
-	"Description": "このプラグインが有効の場合、正常にパッケージビルドが100%できません。必ず無効にしてください。",
+	"Description": "",
 	"Category": "Asobi",
 	"CreatedBy": "bm9",
 	"CreatedByURL": "",

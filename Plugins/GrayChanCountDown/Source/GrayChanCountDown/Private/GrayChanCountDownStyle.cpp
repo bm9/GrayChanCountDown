@@ -1,4 +1,4 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
+// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
 #include "GrayChanCountDownPrivatePCH.h"
 #include "GrayChanCountDownStyle.h"
@@ -57,7 +57,10 @@ TSharedRef< FSlateStyleSet > FGrayChanCountDownStyle::Create()
 
 void FGrayChanCountDownStyle::ReloadTextures()
 {
-	FSlateApplication::Get().GetRenderer()->ReloadTextureResources();
+	if (FSlateApplication::IsInitialized())
+	{
+		FSlateApplication::Get().GetRenderer()->ReloadTextureResources();
+	}
 }
 
 const ISlateStyle& FGrayChanCountDownStyle::Get()
